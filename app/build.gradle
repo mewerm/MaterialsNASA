@@ -7,6 +7,7 @@ android {
     namespace 'com.maximmesh.nasamaterials'
     compileSdk 32
 
+
     defaultConfig {
         applicationId "com.maximmesh.nasamaterials"
         minSdk 23
@@ -17,18 +18,24 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     buildTypes.each {
         Properties properties = new Properties()
         properties.load(project.rootProject.file("apikey.properties").newDataInputStream())
-        def nasaApiKey = properties.getProperty("NASA_API_KEY", "")
+        def nasaApiKey = properties.getProperty("nasa_api_key", "")
         it.buildConfigField "String", "NASA_API_KEY", nasaApiKey
     }
+
 
         compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -36,10 +43,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
-    }
-
-    buildFeatures {
-        viewBinding true
     }
 
 }
