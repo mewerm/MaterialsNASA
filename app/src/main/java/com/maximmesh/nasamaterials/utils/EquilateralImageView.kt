@@ -1,10 +1,8 @@
 package com.maximmesh.nasamaterials.utils
 
 import android.content.Context
-import android.graphics.Bitmap
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
-import com.google.android.material.math.MathUtils
 
 class EquilateralImageView @JvmOverloads constructor (
     context: Context,

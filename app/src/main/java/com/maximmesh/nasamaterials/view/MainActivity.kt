@@ -1,7 +1,7 @@
 package com.maximmesh.nasamaterials.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.maximmesh.nasamaterials.R
 import com.maximmesh.nasamaterials.databinding.ActivityMainBinding
 

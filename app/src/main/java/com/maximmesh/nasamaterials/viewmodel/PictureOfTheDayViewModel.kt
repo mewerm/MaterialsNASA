@@ -9,6 +9,7 @@ import com.maximmesh.nasamaterials.model.repository.PODRetrofitImpl
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDate
 
 class PictureOfTheDayViewModel(
     private val liveDataForViewToObserve: MutableLiveData<AppState> = MutableLiveData(),
@@ -17,11 +18,11 @@ class PictureOfTheDayViewModel(
 ) : ViewModel() {
 
     fun getData(): LiveData<AppState> {
-        sendServerRequest()
+        sendServerRequest(null)
         return liveDataForViewToObserve
     }
 
-    private fun sendServerRequest() {
+    private fun sendServerRequest(date: LocalDate?) {
         liveDataForViewToObserve.value = AppState.Loading(null)
 
         val apiKey: String = NASA_API_KEY
