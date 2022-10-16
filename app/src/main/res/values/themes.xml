@@ -1,16 +1,39 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <!-- Base application theme. -->
     <style name="Theme.NASAMaterials" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimary</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/color_gray</item>
+        <item name="colorOnPrimary">@color/light_white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondary">@color/red_orange</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
+        <item name="colorAccent">@color/dark_orange</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/eight_bit_font</item>
+    </style>
+
+<!--    "Песочная" тема-->
+    <style name="SandTheme" parent="Theme.NASAMaterials">
+        <item name="colorPrimary">@color/sandPrimaryColor</item>
+        <item name="colorPrimaryVariant">@color/sandPrimaryDarkColor</item>
+        <item name="colorOnPrimary">@color/sandPrimaryLightColor</item>
+        <item name="colorAccent">@color/sandAccentColor</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <!--   Стиль, для среза краев - будет использована только в песочной теме. -->
+        <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.M3.Sys.Shape.Corner.Small</item>
+
+    </style>
+
+    <!-- "Каким был марс раньше" тема-->
+    <style name="GreenTheme" parent="Theme.NASAMaterials">
+        <item name="colorPrimary">@color/greenPrimaryColor</item>
+        <item name="colorPrimaryVariant">@color/greenPrimaryDarkColor</item>
+        <item name="colorOnPrimary">@color/greenPrimaryLightColor</item>
+        <item name="colorAccent">@color/greenAccentColor</item>
+        <item name="android:textColorPrimary">@color/black</item>
     </style>
 </resources>

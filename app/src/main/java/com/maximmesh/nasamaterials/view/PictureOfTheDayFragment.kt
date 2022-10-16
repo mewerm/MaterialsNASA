@@ -4,11 +4,16 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.transition.ChangeBounds
+import androidx.transition.ChangeImageTransform
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -22,6 +27,7 @@ import com.maximmesh.nasamaterials.viewmodel.PictureOfTheDayViewModel
 
 class PictureOfTheDayFragment : Fragment() {
 
+    private var isZoomed = false
     private var _binding: FragmentPictureOfTheDayBinding? = null
     private val binding get() = _binding!!
 
@@ -50,6 +56,7 @@ class PictureOfTheDayFragment : Fragment() {
             })
         }
         setBottomAppBar(view)
+        animatePhotoClick()
     }
 
     override fun onDestroyView() {
@@ -141,6 +148,27 @@ class PictureOfTheDayFragment : Fragment() {
                 binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
             }
         }
+    }
+
+    private fun animatePhotoClick(){
+            binding.imageView.setOnClickListener {
+                isZoomed = !isZoomed
+                TransitionManager.beginDelayedTransition(
+                    binding.root,
+                    TransitionSet()
+                        .addTransition(ChangeBounds())
+                        .addTransition(ChangeImageTransform())
+                )
+
+                val params: ViewGroup.LayoutParams = binding.imageView.layoutParams
+                params.height =
+                    if (isZoomed) ViewGroup.LayoutParams.MATCH_PARENT else ViewGroup.LayoutParams.WRAP_CONTENT
+                binding.imageView.apply {
+                    layoutParams = params
+                    scaleType =
+                        if (isZoomed) ImageView.ScaleType.CENTER_CROP else ImageView.ScaleType.FIT_XY
+                }
+            }
     }
 
     companion object {
