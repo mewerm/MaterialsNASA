@@ -24,7 +24,6 @@
         <item name="android:textColorPrimary">@color/black</item>
         <!--   Стиль, для среза краев - будет использована только в песочной теме. -->
         <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.M3.Sys.Shape.Corner.Small</item>
-
     </style>
 
     <!-- "Каким был марс раньше" тема-->
