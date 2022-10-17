@@ -39,6 +39,12 @@ class SettingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        init()
+
+        setThemeWhenClickButton()
+    }
+
+    private fun setThemeWhenClickButton() {
         with(binding) {
             themeBaseButton.setOnClickListener {
                 settingsViewModel.setTheme(THEME_BASE)
