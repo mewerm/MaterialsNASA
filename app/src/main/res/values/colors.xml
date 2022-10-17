@@ -18,4 +18,16 @@
         <color name="empty_brown">#D2A03C1E</color>
         <color name="light_white">#BDBDBD</color>
 
+        <!-- Цвета  Зеленой Темы-->
+        <color name="greenPrimaryColor">#a5d6a7</color>
+        <color name="greenPrimaryLightColor">#e1ffb1</color>
+        <color name="greenPrimaryDarkColor">#75a478</color>
+        <color name="greenAccentColor">#357339</color>
+
+        <!-- Цвета Песочной Темы-->
+        <color name="sandPrimaryColor">#ffd180</color>
+        <color name="sandPrimaryLightColor">#ffffb1</color>
+        <color name="sandPrimaryDarkColor">#caa052</color>
+        <color name="sandAccentColor">#B67906</color>
+
 </resources>

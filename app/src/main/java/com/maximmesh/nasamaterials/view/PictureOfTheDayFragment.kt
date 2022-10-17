@@ -4,11 +4,16 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.transition.ChangeBounds
+import androidx.transition.ChangeImageTransform
+import androidx.transition.TransitionManager
+import androidx.transition.TransitionSet
 import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -22,6 +27,7 @@ import com.maximmesh.nasamaterials.viewmodel.PictureOfTheDayViewModel
 
 class PictureOfTheDayFragment : Fragment() {
 
+    private var isZoomed = false
     private var _binding: FragmentPictureOfTheDayBinding? = null
     private val binding get() = _binding!!
 
@@ -36,7 +42,6 @@ class PictureOfTheDayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         viewModel.getData().observe(viewLifecycleOwner) { renderData(it) }
-
         _binding = FragmentPictureOfTheDayBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -50,6 +55,8 @@ class PictureOfTheDayFragment : Fragment() {
             })
         }
         setBottomAppBar(view)
+        enlargePictureFirst()
+        animatePhotoClick()
     }
 
     override fun onDestroyView() {
@@ -65,7 +72,7 @@ class PictureOfTheDayFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.app_bar_fav -> toast("Favourite")
-            R.id.app_bar_settings -> activity?.supportFragmentManager?.beginTransaction()?.add(R.id.container, ChipsFragment.newInstance())
+            R.id.app_bar_settings -> activity?.supportFragmentManager?.beginTransaction()?.add(R.id.container, SettingsFragment.newInstance())
                 ?.addToBackStack(null)
                 ?.commit()
             android.R.id.home -> {
@@ -141,6 +148,28 @@ class PictureOfTheDayFragment : Fragment() {
                 binding.bottomAppBar.replaceMenu(R.menu.menu_bottom_bar)
             }
         }
+    }
+
+    private fun enlargePictureFirst() {
+        binding.imageView.apply {
+            scaleType = ImageView.ScaleType.CENTER
+        }
+    }
+
+    private fun animatePhotoClick(){
+            binding.imageView.setOnClickListener {
+                isZoomed = !isZoomed
+                TransitionManager.beginDelayedTransition(
+                    binding.root,
+                    TransitionSet()
+                        .addTransition(ChangeBounds())
+                        .addTransition(ChangeImageTransform())
+                )
+                binding.imageView.apply {
+                    scaleType =
+                        if (isZoomed) ImageView.ScaleType.CENTER_INSIDE else ImageView.ScaleType.CENTER_CROP
+                }
+            }
     }
 
     companion object {
