@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.maximmesh.nasamaterials.R
 import com.maximmesh.nasamaterials.databinding.ActivityMainBinding
+import com.maximmesh.nasamaterials.model.repository.ShredPrefSave
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,11 +14,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        init()
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.container, PictureOfTheDayFragment.newInstance())
                 .commitNow()
+        }
+    }
+
+    private fun init() {
+        val themeStorage = ShredPrefSave(this.application)
+        themeStorage.themeID.let {
+            when (it) {
+                0 -> setTheme(R.style.BaseTheme)
+                1 -> setTheme(R.style.GreenTheme)
+                2 -> setTheme(R.style.SandTheme)
+            }
         }
     }
 }

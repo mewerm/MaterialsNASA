@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?colorOnPrimary"
+    android:clickable="true"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/themeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/checkTheme"
+        android:textColorHint="?colorPrimary"
+        android:padding="16dp"
+        android:textAlignment="center"
+        android:textColor="?android:attr/colorPrimary"
+        android:textSize="22sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/themeBaseButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/onLuneText"
+        android:textColor="@color/color_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/themeText" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/themeGreenButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/marsBeforeWarText"
+        android:textColor="@color/greenPrimaryDarkColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/themeBaseButton" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/themeSandButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/morningPluto"
+        android:textColor="@color/sandPrimaryDarkColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/themeGreenButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

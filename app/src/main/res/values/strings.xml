@@ -10,5 +10,9 @@
     <string name="chip_text_today">Today</string>
     <string name="chip_text_day_before_yesterday">Day before yesterday</string>
     <string name="chip_text_yesterday">Yesterday</string>
+    <string name="checkTheme">Выбери свою тему:</string>
+    <string name="onLuneText">На луне</string>
+    <string name="marsBeforeWarText">Марс до войны</string>
+    <string name="morningPluto">Утро на Плутоне</string>
 
 </resources>

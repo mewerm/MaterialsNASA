@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="Theme.NASAMaterials" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="BaseTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/color_gray</item>
@@ -17,7 +17,7 @@
     </style>
 
 <!--    "Песочная" тема-->
-    <style name="SandTheme" parent="Theme.NASAMaterials">
+    <style name="SandTheme" parent="BaseTheme">
         <item name="colorPrimary">@color/sandPrimaryColor</item>
         <item name="colorPrimaryVariant">@color/sandPrimaryDarkColor</item>
         <item name="colorOnPrimary">@color/sandPrimaryLightColor</item>
@@ -29,7 +29,7 @@
     </style>
 
     <!-- "Каким был марс раньше" тема-->
-    <style name="GreenTheme" parent="Theme.NASAMaterials">
+    <style name="GreenTheme" parent="BaseTheme">
         <item name="colorPrimary">@color/greenPrimaryColor</item>
         <item name="colorPrimaryVariant">@color/greenPrimaryDarkColor</item>
         <item name="colorOnPrimary">@color/greenPrimaryLightColor</item>
