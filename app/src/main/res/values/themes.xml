@@ -15,7 +15,6 @@
         <!-- Customize your theme here. -->
         <item name="fontFamily">@font/eight_bit_font</item>
     </style>
-
 <!--    "Песочная" тема-->
     <style name="SandTheme" parent="BaseTheme">
         <item name="colorPrimary">@color/sandPrimaryColor</item>
