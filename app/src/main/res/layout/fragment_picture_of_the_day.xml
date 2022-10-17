@@ -50,7 +50,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                app:cardCornerRadius="180dp"
+                app:cardCornerRadius="999dp"
+                android:layout_marginTop="50dp"
                 app:cardElevation="10dp"
                 app:cardMaxElevation="20dp"
                 app:cardPreventCornerOverlap="false"
@@ -70,7 +71,6 @@
                     app:srcCompat="@drawable/ic_no_photo_vector" />
             </com.google.android.material.card.MaterialCardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     <include layout="@layout/bottom_sheet_layout" />
 
     <!-- fabCradleMargin вместо fabCradleDiameter -->

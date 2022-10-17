@@ -42,7 +42,6 @@ class PictureOfTheDayFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         viewModel.getData().observe(viewLifecycleOwner) { renderData(it) }
-
         _binding = FragmentPictureOfTheDayBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -56,6 +55,7 @@ class PictureOfTheDayFragment : Fragment() {
             })
         }
         setBottomAppBar(view)
+        enlargePictureFirst()
         animatePhotoClick()
     }
 
@@ -150,6 +150,12 @@ class PictureOfTheDayFragment : Fragment() {
         }
     }
 
+    private fun enlargePictureFirst() {
+        binding.imageView.apply {
+            scaleType = ImageView.ScaleType.CENTER
+        }
+    }
+
     private fun animatePhotoClick(){
             binding.imageView.setOnClickListener {
                 isZoomed = !isZoomed
@@ -159,14 +165,9 @@ class PictureOfTheDayFragment : Fragment() {
                         .addTransition(ChangeBounds())
                         .addTransition(ChangeImageTransform())
                 )
-
-                val params: ViewGroup.LayoutParams = binding.imageView.layoutParams
-                params.height =
-                    if (isZoomed) ViewGroup.LayoutParams.MATCH_PARENT else ViewGroup.LayoutParams.WRAP_CONTENT
                 binding.imageView.apply {
-                    layoutParams = params
                     scaleType =
-                        if (isZoomed) ImageView.ScaleType.CENTER_CROP else ImageView.ScaleType.FIT_XY
+                        if (isZoomed) ImageView.ScaleType.CENTER_INSIDE else ImageView.ScaleType.CENTER_CROP
                 }
             }
     }
