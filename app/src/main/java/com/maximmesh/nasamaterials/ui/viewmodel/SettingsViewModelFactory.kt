@@ -1,8 +1,8 @@
-package com.maximmesh.nasamaterials.viewmodel
+package com.maximmesh.nasamaterials.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.maximmesh.nasamaterials.model.repository.ShredPrefSave
+import com.maximmesh.nasamaterials.repository.ShredPrefSave
 
 class SettingsViewModelFactory(
     private val themeStorage: ShredPrefSave

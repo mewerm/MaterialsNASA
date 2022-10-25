@@ -1,6 +1,6 @@
-package com.maximmesh.nasamaterials.viewmodel
+package com.maximmesh.nasamaterials.ui.viewmodel
 
-import com.maximmesh.nasamaterials.model.entities.PictureOfDayDTO
+import com.maximmesh.nasamaterials.repository.network.entities.PictureOfDayDTO
 
 
 sealed class AppState {

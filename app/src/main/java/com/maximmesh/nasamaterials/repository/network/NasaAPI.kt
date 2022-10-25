@@ -1,6 +1,6 @@
-package com.maximmesh.nasamaterials.model
+package com.maximmesh.nasamaterials.repository.network
 
-import com.maximmesh.nasamaterials.model.entities.PictureOfDayDTO
+import com.maximmesh.nasamaterials.repository.network.entities.PictureOfDayDTO
 import com.maximmesh.nasamaterials.utils.API_KEY
 import com.maximmesh.nasamaterials.utils.NASA_ENDPOINT
 import retrofit2.Call

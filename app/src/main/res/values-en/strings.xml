@@ -15,4 +15,8 @@
     <string name="onLuneText">On the moon</string>
     <string name="marsBeforeWarText">Mars before the war</string>
     <string name="morningPluto">Morning on Pluto</string>
+    <string name="earth">Earth</string>
+    <string name="mars">Mars</string>
+    <string name="system">System</string>
+
 </resources>

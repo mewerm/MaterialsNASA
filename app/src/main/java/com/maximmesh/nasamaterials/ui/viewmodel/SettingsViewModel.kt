@@ -1,8 +1,8 @@
-package com.maximmesh.nasamaterials.viewmodel
+package com.maximmesh.nasamaterials.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.maximmesh.nasamaterials.model.repository.ShredPrefSave
+import com.maximmesh.nasamaterials.repository.ShredPrefSave
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch

@@ -1,7 +1,6 @@
-package com.maximmesh.nasamaterials.model.repository
+package com.maximmesh.nasamaterials.repository.network
 
 import com.google.gson.GsonBuilder
-import com.maximmesh.nasamaterials.model.NasaAPI
 import com.maximmesh.nasamaterials.utils.NASA_DOMAIN
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

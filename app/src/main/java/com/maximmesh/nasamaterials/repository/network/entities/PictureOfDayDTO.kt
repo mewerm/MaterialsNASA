@@ -1,4 +1,4 @@
-package com.maximmesh.nasamaterials.model.entities
+package com.maximmesh.nasamaterials.repository.network.entities
 
 import com.google.gson.annotations.SerializedName
 

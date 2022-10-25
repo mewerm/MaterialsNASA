@@ -3,7 +3,6 @@ package com.maximmesh.nasamaterials.utils
 import android.view.Gravity
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.maximmesh.nasamaterials.model.entities.PictureOfDayDTO
 
 const val NASA_DOMAIN = "https://api.nasa.gov/"
 const val NASA_ENDPOINT ="planetary/apod"

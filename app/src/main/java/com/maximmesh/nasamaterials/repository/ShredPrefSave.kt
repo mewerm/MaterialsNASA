@@ -1,11 +1,10 @@
-package com.maximmesh.nasamaterials.model.repository
+package com.maximmesh.nasamaterials.repository
 
 import android.content.Context
 import com.maximmesh.nasamaterials.utils.KEY_THEME_ID
 import com.maximmesh.nasamaterials.utils.SHARED_PREF_THEME
 
 class ShredPrefSave(private val context: Context) {
-
 
     private val sharedPreferences = context.getSharedPreferences(
         SHARED_PREF_THEME,

@@ -1,4 +1,4 @@
-package com.maximmesh.nasamaterials.view
+package com.maximmesh.nasamaterials.ui.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.maximmesh.nasamaterials.databinding.FragmentSettingsBinding
-import com.maximmesh.nasamaterials.model.repository.ShredPrefSave
-import com.maximmesh.nasamaterials.viewmodel.SettingsViewModel
-import com.maximmesh.nasamaterials.viewmodel.SettingsViewModelFactory
+import com.maximmesh.nasamaterials.repository.ShredPrefSave
+import com.maximmesh.nasamaterials.ui.viewmodel.SettingsViewModel
+import com.maximmesh.nasamaterials.ui.viewmodel.SettingsViewModelFactory
 
 class SettingsFragment : Fragment() {
 
@@ -83,8 +83,5 @@ class SettingsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-    companion object {
-        fun newInstance() = SettingsFragment()
     }
 }

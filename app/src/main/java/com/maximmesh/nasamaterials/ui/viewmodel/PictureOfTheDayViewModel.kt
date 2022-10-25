@@ -1,11 +1,11 @@
-package com.maximmesh.nasamaterials.viewmodel
+package com.maximmesh.nasamaterials.ui.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.maximmesh.nasamaterials.BuildConfig.NASA_API_KEY
-import com.maximmesh.nasamaterials.model.entities.PictureOfDayDTO
-import com.maximmesh.nasamaterials.model.repository.PODRetrofitImpl
+import com.maximmesh.nasamaterials.repository.network.entities.PictureOfDayDTO
+import com.maximmesh.nasamaterials.repository.network.PODRetrofitImpl
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
