@@ -10,7 +10,6 @@ import com.maximmesh.nasamaterials.databinding.ActivityMainBinding
 import com.maximmesh.nasamaterials.repository.ShredPrefSave
 import com.maximmesh.nasamaterials.ui.viewpager.ViewPagerFragment
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
