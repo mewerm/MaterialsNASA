@@ -1,4 +1,4 @@
-package com.maximmesh.nasamaterials.ui.viewmodel
+package com.maximmesh.nasamaterials.repository
 
 import com.maximmesh.nasamaterials.repository.network.entities.PictureOfDayDTO
 

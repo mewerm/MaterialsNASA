@@ -1,4 +1,4 @@
-package com.maximmesh.nasamaterials.ui.viewpager
+package com.maximmesh.nasamaterials.ui.fragments.planets
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -18,5 +18,10 @@
     <string name="earth">Earth</string>
     <string name="mars">Mars</string>
     <string name="system">System</string>
+    <string name="picture">Picture</string>
+    <string name="planets">Planets</string>
+    <string name="crash">Crash</string>
+    <string name="tap">TAP</string>
+
 
 </resources>

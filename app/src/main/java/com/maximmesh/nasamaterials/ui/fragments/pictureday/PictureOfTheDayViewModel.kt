@@ -1,4 +1,4 @@
-package com.maximmesh.nasamaterials.ui.viewmodel
+package com.maximmesh.nasamaterials.ui.fragments.pictureday
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.maximmesh.nasamaterials.BuildConfig.NASA_API_KEY
 import com.maximmesh.nasamaterials.repository.network.entities.PictureOfDayDTO
 import com.maximmesh.nasamaterials.repository.network.PODRetrofitImpl
+import com.maximmesh.nasamaterials.repository.AppState
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -1,9 +1,11 @@
-package com.maximmesh.nasamaterials.ui.view
+package com.maximmesh.nasamaterials.ui.fragments.pictureday
 
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.*
+import android.view.animation.AnticipateOvershootInterpolator
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -18,8 +20,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.maximmesh.nasamaterials.R
 import com.maximmesh.nasamaterials.databinding.FragmentPictureOfTheDayBinding
 import com.maximmesh.nasamaterials.repository.network.entities.PictureOfDayDTO
-import com.maximmesh.nasamaterials.ui.viewmodel.AppState
-import com.maximmesh.nasamaterials.ui.viewmodel.PictureOfTheDayViewModel
+import com.maximmesh.nasamaterials.repository.AppState
 import com.maximmesh.nasamaterials.utils.URI_WIKI
 import com.maximmesh.nasamaterials.utils.toast
 
@@ -31,7 +32,7 @@ class PictureOfTheDayFragment : Fragment() {
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
-     private val viewModel: PictureOfTheDayViewModel by lazy {
+    private val viewModel: PictureOfTheDayViewModel by lazy {
         ViewModelProvider.NewInstanceFactory().create(PictureOfTheDayViewModel::class.java)
     }
 
@@ -64,6 +65,7 @@ class PictureOfTheDayFragment : Fragment() {
     private fun renderData(data: AppState) {
         when (data) {
             is AppState.Success -> {
+                binding.progressBar.visibility = View.GONE
                 val serverResponseData = data.serverResponseData
                 val url = serverResponseData.url
                 if (url.isNullOrEmpty()) {
@@ -79,7 +81,7 @@ class PictureOfTheDayFragment : Fragment() {
                 }
             }
             is AppState.Loading -> {
-                //TODO
+                binding.progressBar.visibility = View.VISIBLE
             }
             is AppState.Error -> {
                 toast(data.error.message)
@@ -108,19 +110,21 @@ class PictureOfTheDayFragment : Fragment() {
         }
     }
 
-    private fun animatePhotoClick(){
-            binding.imageView.setOnClickListener {
-                isZoomed = !isZoomed
-                TransitionManager.beginDelayedTransition(
-                    binding.root,
-                    TransitionSet()
-                        .addTransition(ChangeBounds())
-                        .addTransition(ChangeImageTransform())
-                )
-                binding.imageView.apply {
-                    scaleType =
-                        if (isZoomed) ImageView.ScaleType.CENTER_INSIDE else ImageView.ScaleType.CENTER_CROP
-                }
+    /**Здесь задействовал анимацию. При первом нажатии на фотографию,
+    она отдаляется, при повтороном нажатии приближается*/
+    private fun animatePhotoClick() {
+        binding.imageView.setOnClickListener {
+            isZoomed = !isZoomed
+            TransitionManager.beginDelayedTransition(
+                binding.root,
+                TransitionSet()
+                    .addTransition(ChangeBounds())
+                    .addTransition(ChangeImageTransform())
+            )
+            binding.imageView.apply {
+                scaleType =
+                    if (isZoomed) ImageView.ScaleType.CENTER_INSIDE else ImageView.ScaleType.CENTER_CROP
             }
+        }
     }
 }

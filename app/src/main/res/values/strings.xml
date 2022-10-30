@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" >NASA Materials</string>
-    <string name="photo_of_the_day_stub" >Фото дня</string>
-    <string name="search_wiki" >Найти в Википедии</string>
+    <string name="app_name">NASA Materials</string>
+    <string name="photo_of_the_day_stub">Фото дня</string>
+    <string name="search_wiki">Найти в Википедии</string>
     <string name="wiki_helper_text">Поищите термин в википедии</string>
     <string name="favourite">Лайк Репост Круто</string>
     <string name="settings">Настройки</string>
@@ -18,5 +18,10 @@
     <string name="earth">Земля</string>
     <string name="mars">Марс</string>
     <string name="system">Система</string>
+
+    <string name="picture">Фото</string>
+    <string name="planets">Планеты</string>
+    <string name="crash">Разрушить</string>
+    <string name="tap">ЖМИ</string>
 
 </resources>

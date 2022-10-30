@@ -1,4 +1,4 @@
-package com.maximmesh.nasamaterials.ui.viewpager
+package com.maximmesh.nasamaterials.ui.fragments.planets
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

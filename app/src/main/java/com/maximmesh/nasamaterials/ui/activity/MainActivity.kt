@@ -1,4 +1,4 @@
-package com.maximmesh.nasamaterials.ui.view
+package com.maximmesh.nasamaterials.ui.activity
 
 
 import android.os.Bundle
@@ -8,7 +8,10 @@ import com.google.android.material.navigation.NavigationBarView
 import com.maximmesh.nasamaterials.R
 import com.maximmesh.nasamaterials.databinding.ActivityMainBinding
 import com.maximmesh.nasamaterials.repository.ShredPrefSave
-import com.maximmesh.nasamaterials.ui.viewpager.ViewPagerFragment
+import com.maximmesh.nasamaterials.ui.fragments.pictureday.PictureOfTheDayFragment
+import com.maximmesh.nasamaterials.ui.fragments.settings.SettingsFragment
+import com.maximmesh.nasamaterials.ui.fragments.crash.CrashFragment
+import com.maximmesh.nasamaterials.ui.fragments.planets.ViewPagerFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,6 +39,9 @@ class MainActivity : AppCompatActivity() {
                 R.id.action_view_planets -> {
                     doFragmentNavigate(ViewPagerFragment())
                 }
+                R.id.app_bar_useless -> {
+                    doFragmentNavigate(CrashFragment())
+                }
                 else -> {
                     doFragmentNavigate(PictureOfTheDayFragment())
                 }
@@ -46,6 +52,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun doFragmentNavigate(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
+            .setCustomAnimations(androidx.appcompat.R.anim.abc_grow_fade_in_from_bottom,
+                androidx.appcompat.R.anim.abc_slide_out_bottom)
             .replace(R.id.container, fragment)
             .commit()
     }

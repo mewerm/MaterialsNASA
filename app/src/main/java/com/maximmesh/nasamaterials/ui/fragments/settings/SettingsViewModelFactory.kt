@@ -1,4 +1,4 @@
-package com.maximmesh.nasamaterials.ui.viewmodel
+package com.maximmesh.nasamaterials.ui.fragments.settings
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
