@@ -11,6 +11,7 @@ import com.maximmesh.nasamaterials.repository.ShredPrefSave
 import com.maximmesh.nasamaterials.ui.fragments.pictureday.PictureOfTheDayFragment
 import com.maximmesh.nasamaterials.ui.fragments.settings.SettingsFragment
 import com.maximmesh.nasamaterials.ui.fragments.crash.CrashFragment
+import com.maximmesh.nasamaterials.ui.fragments.notes.NotesFragment
 import com.maximmesh.nasamaterials.ui.fragments.planets.ViewPagerFragment
 
 class MainActivity : AppCompatActivity() {
@@ -39,8 +40,11 @@ class MainActivity : AppCompatActivity() {
                 R.id.action_view_planets -> {
                     doFragmentNavigate(ViewPagerFragment())
                 }
-                R.id.app_bar_useless -> {
+                R.id.app_bar_crash -> {
                     doFragmentNavigate(CrashFragment())
+                }
+                R.id.app_bar_notes -> {
+                    doFragmentNavigate(NotesFragment())
                 }
                 else -> {
                     doFragmentNavigate(PictureOfTheDayFragment())

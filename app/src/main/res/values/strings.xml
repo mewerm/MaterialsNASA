@@ -24,4 +24,9 @@
     <string name="crash">Разрушить</string>
     <string name="tap">ЖМИ</string>
 
+    <string name="recycler">Recycler</string>
+    <string name="Header">Заголовок</string>
+    <string name="just_text">Дополнительный текст</string>
+    <string name="notes">Notes</string>
+
 </resources>

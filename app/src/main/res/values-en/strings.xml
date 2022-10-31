@@ -22,6 +22,10 @@
     <string name="planets">Planets</string>
     <string name="crash">Crash</string>
     <string name="tap">TAP</string>
+    <string name="recycler">Recycler</string>
+    <string name="Header">Header</string>
+    <string name="just_text">JustText</string>
+    <string name="notes">Notes</string>
 
 
 </resources>

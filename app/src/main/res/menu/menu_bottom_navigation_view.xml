@@ -10,9 +10,14 @@
         android:icon="@drawable/ic_mars"
         android:title="@string/planets" />
     <item
-        android:id="@+id/app_bar_useless"
+        android:id="@+id/app_bar_crash"
         android:icon="@drawable/ic_destroy"
         android:title="@string/crash" />
+
+    <item
+        android:id="@+id/app_bar_notes"
+        android:icon="@drawable/ic_add_notes"
+        android:title="@string/notes" />
 
     <item
         android:id="@+id/app_bar_settings"
