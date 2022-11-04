@@ -1,13 +1,15 @@
 package com.maximmesh.nasamaterials.ui.fragments.notes
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
 import com.maximmesh.nasamaterials.databinding.FragmentNotesBinding
 import com.maximmesh.nasamaterials.repository.notes.NoteData
+import com.maximmesh.nasamaterials.utils.DESCRIPTION_WHEN_U_RESS_PLUS
+import com.maximmesh.nasamaterials.utils.HEAD_TEXT_WHEN_U_PRESS_PLUS
 
 class NotesFragment : Fragment() {
 
@@ -19,10 +21,7 @@ class NotesFragment : Fragment() {
     private val callbackAdd = AddItem {
         data.add(
             it, NoteData(
-                1, "We know u need NASA picture app",
-                "so we put a wiki search and note-taking feature  " +
-                        "in nasa app\nso u can write note while look picture " +
-                        "while using search wiki while planets spin"
+                1, HEAD_TEXT_WHEN_U_PRESS_PLUS, DESCRIPTION_WHEN_U_RESS_PLUS
             )
         )
         adapter.setListDataAdd(data, it)
