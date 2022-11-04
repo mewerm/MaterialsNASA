@@ -10,15 +10,15 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp">
+        android:paddingStart="@dimen/container_pod_padding_start"
+        android:paddingEnd="@dimen/container_pod_padding_end">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_layout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
+            android:layout_width="@dimen/text_input_layout_width"
             android:layout_height="wrap_content"
-            android:layout_margin="22dp"
+            android:layout_margin="@dimen/text_input_layout_margin"
             android:hint="@string/search_wiki"
 
             android:textColorHint="@color/black"
@@ -53,9 +53,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:orientation="vertical"
-            app:cardCornerRadius="999dp"
-            app:cardElevation="10dp"
-            app:cardMaxElevation="20dp"
+            app:cardCornerRadius="@dimen/card_view_picture_day_corn_radius"
+            app:cardElevation="@dimen/card_view_picture_day_elevation"
+            app:cardMaxElevation="@dimen/card_view_picture_day_corn_max_elevation"
             app:cardPreventCornerOverlap="false"
             app:cardUseCompatPadding="true"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -74,8 +74,8 @@
 
             <ProgressBar
                 android:id="@+id/progressBar"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="@dimen/progress_bar_width"
+                android:layout_height="@dimen/progress_bar_height"
                 android:layout_gravity="center"
                 android:visibility="gone"
                 tools:visibility="visible" />

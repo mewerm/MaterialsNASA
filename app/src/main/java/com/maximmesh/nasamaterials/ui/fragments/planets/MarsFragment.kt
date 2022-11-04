@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.maximmesh.nasamaterials.databinding.FragmentMarsBinding
+import com.maximmesh.nasamaterials.utils.DURATION_FOR_MARS
 
 class MarsFragment : Fragment() {
 
@@ -35,7 +36,7 @@ class MarsFragment : Fragment() {
     private fun rotatePicture(){
         binding.marsPicture.setOnClickListener {
             ObjectAnimator.ofFloat(binding.marsPicture, View.ROTATION, 0f, 360f)
-                .setDuration(200L).start()
+                .setDuration(DURATION_FOR_MARS).start()
         }
     }
 }

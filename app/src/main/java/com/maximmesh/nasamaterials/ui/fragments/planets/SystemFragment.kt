@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.maximmesh.nasamaterials.databinding.FragmentSystemBinding
+import com.maximmesh.nasamaterials.utils.DURATION_FOR_SYSTEM
 
 class SystemFragment : Fragment() {
 
@@ -35,7 +36,7 @@ class SystemFragment : Fragment() {
     private fun rotatePicture(){
         binding.systemPicture.setOnClickListener {
             ObjectAnimator.ofFloat(binding.systemPicture, View.ROTATION, 0f, 1800f)
-                .setDuration(1000L).start()
+                .setDuration(DURATION_FOR_SYSTEM).start()
         }
     }
 }

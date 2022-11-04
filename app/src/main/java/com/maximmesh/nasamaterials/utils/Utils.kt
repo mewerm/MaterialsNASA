@@ -12,6 +12,14 @@ const val SHARED_PREF_THEME = "sharedPreferenceTheme"
 const val KEY_THEME_ID = "keyThemeId"
 
 
+const val CRASH_ITEM_COUNT = 100500
+const val DURATION_FOR_ITEMS_CRASH = 4000L
+const val DURATION_FOR_SCREEN = 5000L
+const val DURATION_FOR_EARTH = 2000L
+const val DURATION_FOR_MARS = 200L
+const val DURATION_FOR_SYSTEM = 200L
+
+
 
  fun Fragment.toast(string: String?) {
     Toast.makeText(context, string, Toast.LENGTH_SHORT).apply {

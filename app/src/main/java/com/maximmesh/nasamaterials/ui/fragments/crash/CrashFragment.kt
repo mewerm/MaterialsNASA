@@ -16,6 +16,9 @@ import androidx.transition.Transition
 import androidx.transition.TransitionManager
 import com.maximmesh.nasamaterials.databinding.FragmentCrashBinding
 import com.maximmesh.nasamaterials.databinding.ItemForCrashBinding
+import com.maximmesh.nasamaterials.utils.CRASH_ITEM_COUNT
+import com.maximmesh.nasamaterials.utils.DURATION_FOR_ITEMS_CRASH
+import com.maximmesh.nasamaterials.utils.DURATION_FOR_SCREEN
 
 class CrashFragment : Fragment() {
 
@@ -49,25 +52,33 @@ class CrashFragment : Fragment() {
             return MyViewHolder(binding)
         }
 
+        /**
+         * Здесь реализовал анимацию, при нажатии на любой item от него отчуждаются другие и он в том числе
+         * со скоростью DURATION_FOR_ITEMS_CRASH. Далее наступает эффект "GAME OVER" - фэйд затухания экрана
+         * со скоростью DURATION_FOR_SCREEN
+         * с последующей индикацией о "успешности завхвата мира" в виде сообщения TOAST посередине экрана за счет
+         * Gravity.CENTER_HORIZONTAL
+         */
         override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
             holder.itemView.setOnClickListener {
                 val rect = Rect()
                 it.getGlobalVisibleRect(rect)
                 val explode = Explode()
-                explode.duration = 4000L
+                explode.duration = DURATION_FOR_ITEMS_CRASH
                 explode.epicenterCallback = object : Transition.EpicenterCallback() {
                     override fun onGetEpicenter(transition: Transition): Rect {
                         return rect
                     }
                 }
                 TransitionManager.beginDelayedTransition(binding.recyclerView, explode)
-                binding.recyclerView.animate().alpha(0f).setDuration(5000L).setListener(
+                binding.recyclerView.animate().alpha(0f).setDuration(DURATION_FOR_SCREEN).setListener(
                     object : AnimatorListenerAdapter() {
                         override fun onAnimationEnd(animation: Animator) {
-                            Toast.makeText(context, "THE WORLD IS INVADED", Toast.LENGTH_LONG).apply {
-                                setGravity(Gravity.CENTER_HORIZONTAL, 0, 0)
-                                show()
-                            }
+                            Toast.makeText(context, "THE WORLD IS INVADED", Toast.LENGTH_LONG)
+                                .apply {
+                                    setGravity(Gravity.CENTER_HORIZONTAL, 0, 0)
+                                    show()
+                                }
                         }
                     }
                 )
@@ -75,9 +86,9 @@ class CrashFragment : Fragment() {
             }
         }
 
-        override fun getItemCount() = 100500
+        override fun getItemCount() = CRASH_ITEM_COUNT
 
-        inner class MyViewHolder(private val binding: ItemForCrashBinding) :
+        inner class MyViewHolder(binding: ItemForCrashBinding) :
             RecyclerView.ViewHolder(binding.root)
     }
 }

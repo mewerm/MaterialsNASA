@@ -5,11 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnticipateOvershootInterpolator
 import androidx.fragment.app.Fragment
-import androidx.transition.ChangeBounds
-import androidx.transition.TransitionManager
 import com.maximmesh.nasamaterials.databinding.FragmentEarthBinding
+import com.maximmesh.nasamaterials.utils.DURATION_FOR_EARTH
 
 class EarthFragment : Fragment() {
 
@@ -39,7 +37,7 @@ class EarthFragment : Fragment() {
     private fun rotatePicture(){
         binding.earthImage.setOnClickListener {
             ObjectAnimator.ofFloat(binding.earthImage, View.ROTATION, 0f, 360f)
-                .setDuration(2000L).start()
+                .setDuration(DURATION_FOR_EARTH).start()
         }
     }
 }

@@ -2,12 +2,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tool="http://schemas.android.com/tools"
     android:background="?colorPrimary">
 
     <ImageView
-        android:layout_width="1000dp"
-        android:layout_height="611dp"
+        android:layout_width="@dimen/image_meme_guy_width"
+        android:layout_height="@dimen/image_meme_guy_height"
         android:background="@drawable/pimp_my_app"
         android:backgroundTint="?colorPrimary"
         android:backgroundTintMode="multiply"
@@ -17,7 +16,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="74dp"
+        android:layout_marginBottom="@dimen/recycler_view_margin"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 </FrameLayout>

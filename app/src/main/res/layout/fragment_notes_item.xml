@@ -5,12 +5,12 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
+    android:layout_margin="@dimen/card_of_note_margin"
     android:backgroundTint="?colorOnPrimary"
     android:clickable="true"
     android:focusable="true"
-    app:cardCornerRadius="15dp"
-    app:cardElevation="25dp">
+    app:cardCornerRadius="@dimen/card_of_note_corner_radius"
+    app:cardElevation="@dimen/card_of_note_elevation">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -20,9 +20,9 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/card_of_note_title_margin_top"
             android:backgroundTint="@android:color/transparent"
-            android:padding="16dp"
+            android:padding="@dimen/card_of_note_title_padding"
             android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
             app:layout_constraintEnd_toStartOf="@+id/addItemImageView"
             app:layout_constraintHorizontal_bias="0.077"
@@ -35,8 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/transparent"
-            android:padding="16dp"
-            android:textSize="16sp"
+            android:padding="@dimen/card_of_note_message_padding"
+            android:textSize="@dimen/card_of_note_message_text_size"
             app:layout_constraintEnd_toStartOf="@+id/addItemImageView"
             app:layout_constraintHorizontal_bias="0.076"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,10 +45,9 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/addItemImageView"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="10dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="@dimen/card_of_note_plus_picture_width"
+            android:layout_height="@dimen/card_of_note_plus_picture_height"
+            android:layout_margin="@dimen/card_of_note_plus_picture_margin"
             android:background="?colorOnPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +56,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="4dp"
+            android:layout_height="@dimen/card_of_note_bottom_line_height"
             android:background="?colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
