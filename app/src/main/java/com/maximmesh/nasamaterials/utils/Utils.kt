@@ -26,6 +26,12 @@ const val DESCRIPTION_WHEN_U_RESS_PLUS =
             "in nasa app\nso u can write note while look picture " +
             "while using search wiki while planets spin"
 
+const val DELAY_FOR_START_MAIN_ACTIVITY = 2000L
+const val WEIGHT_OF_PROGRESS_BAR = 2000L
+const val LENGTH_OF_PROGRESS_BAR = 2000
+const val PAUSE_MOMENT_PROGRESS_BAR = 1950
+
+
 
 fun Fragment.toast(string: String?) {
     Toast.makeText(context, string, Toast.LENGTH_SHORT).apply {

@@ -26,6 +26,7 @@
     <string name="Header">Header</string>
     <string name="just_text">JustText</string>
     <string name="notes">Notes</string>
+    <string name="progress">progress</string>
 
 
 </resources>

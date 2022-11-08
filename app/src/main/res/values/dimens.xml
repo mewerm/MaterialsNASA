@@ -56,4 +56,7 @@
     <dimen name="play_bottom_height">100dp</dimen>
     <dimen name="play_bottom_margin">5dp</dimen>
     <dimen name="play_bottom_margin_end">5dp</dimen>
+    <dimen name="splash_progress_bar_width">300dp</dimen>
+    <dimen name="splash_image_width">250dp</dimen>
+    <dimen name="splash_image_height">250dp</dimen>
 </resources>
